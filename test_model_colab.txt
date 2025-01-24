@@ -1,0 +1,43 @@
+# Import necessary libraries
+import pickle
+import pandas as pd
+
+# Your test data in JSON format
+input_data = {
+  "columns": [
+    "day",
+    "mnth",
+    "year",
+    "season",
+    "holiday",
+    "weekday",
+    "workingday",
+    "weathersit",
+    "temp",
+    "atemp",
+    "hum",
+    "windspeed"
+  ],
+  "index": [0],
+  "data": [[1, 1, 2022, 2, 0, 1, 1, 2, 0.3, 0.3, 0.3, 0.3]]
+}
+
+# Convert the input data into a DataFrame
+X_test = pd.DataFrame(data=input_data["data"], columns=input_data["columns"], index=input_data["index"])
+
+# Load the trained model from the uploaded file
+with open('/content/model.pkl', 'rb') as file:
+    model = pickle.load(file)
+
+# Predict using the model
+predictions = model.predict(X_test)
+
+# Output the predictions
+print("Predicted rental value:", predictions)
+
+# In case you want to add error handling
+try:
+    predictions = model.predict(X_test)
+    print(f"Predicted rental value: {predictions}")
+except Exception as e:
+    print(f"Error during prediction: {e}")
