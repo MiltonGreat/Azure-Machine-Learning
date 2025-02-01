@@ -39,4 +39,4 @@ This project focuses on the process of training a machine learning model in Azur
 
 ### Source
 
-Exercise:[Microsoft Training Module](https://learn.microsoft.com/en-ca/training/modules/fundamentals-machine-learning/10-exercise-auto-ml)
+Exercise: [Microsoft Training Module](https://learn.microsoft.com/en-ca/training/modules/fundamentals-machine-learning/10-exercise-auto-ml)
